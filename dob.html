@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,button{
+            padding: 10px;
+            width: 150px;
+            
+
+        }
+        button{
+            background-color: yellow;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="">Select Date of Birth:</label>
+        <br>
+        <input type="date">
+        <button>submit</button>
+    </form>
+    <h1>your age is:<span id="display">years</span></h1>
+    <script>
+        let form=document.querySelector('form')
+        let input=document.querySelector('input')
+        let span=document.querySelector('#display')
+        form.onsubmit=()=>{
+            let dob=input.value
+            // alert(dob)
+            let age=new Date().getFullYear()-new Date(dob).getFullYear()
+            // alert(age)
+            span.innerText=age
+            event.preventDefault()
+      
+        if(age<=18){
+            span.style.color="red"
+        }else if(age>=60){
+            span.style.color="yellow"
+        }
+        
+        else{
+            span.style.color="green"
+
+        }
+    }
+
+    </script>
+
+</body>
+</html>
